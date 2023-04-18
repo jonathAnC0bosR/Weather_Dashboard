@@ -1,0 +1,21 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    font-size: 200%;
+    text-align: center;
+    background-color: rgb(207, 177, 236);
+    line-height: 65px;
+}
+
+div.side-part {
+    display: flex;
+    width: 250px;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 130%;
+    margin-top: 10px;
+}
