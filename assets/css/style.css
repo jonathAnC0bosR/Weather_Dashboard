@@ -13,9 +13,25 @@ div.side-part {
     display: flex;
     width: 250px;
     justify-content: center;
+    text-align: center;;
 }
 
-h2 {
-    font-size: 130%;
-    margin-top: 10px;
+h2  {
+    font-size: 150%;
+    margin: 10px;
+    font-weight: 700;
+}
+
+button {
+    margin: 10px;
+    width: 175px;
+    background-color: rgb(140, 158, 216);
+    height: 28px;
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+}
+
+div.search-button {
+    border-bottom: 1px solid black;
 }
