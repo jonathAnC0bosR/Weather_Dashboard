@@ -24,7 +24,7 @@ var getCityCoordenates = function(city) {
             if(response.ok) {
                 response.json().then(function(data) {
                     console.log(data);
-                    displayWeatherCards(data)
+                    displayWeatherCards(data.list)
                 })
             } else { 
                 alert('Error' + response.statusText);
@@ -39,12 +39,29 @@ var displayWeatherCards = function(data) {
         alert("There's no data for this city, sorry");
         return;
     } 
+    var today = dayjs();
+    console.log();
+    var dateEl = document.createElement('h2');
+    var titleEl = document.createElement('h1');
+    dateEl.textContent = today.format('DD-MMM-YY');
+    dateEl.classList = 'date';
+    titleEl.textContent = inputEl.value;
+    bigCardEl.appendChild(titleEl);
+    bigCardEl.appendChild(dateEl);
+    
 
-    bigCardEl.textContent = inputEl.value.trim();
-
-    for(var i = 0; i < data.length; i++) {
-        console.log(data[i].list);
+    
+    console.log(data[0]);
+    for(var i = 0; i < data.length; i+=8) {
+        console.log(data[i]);
+        
     }
+
+    // bigCardEl.textContent = inputEl.value.trim();
+
+    
+
+    
 
 }
 
