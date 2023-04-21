@@ -9,13 +9,37 @@ h1 {
     line-height: 65px;
 }
 
+
 div.side-part {
     display: flex;
     width: 250px;
     justify-content: center;
     text-align: center;;
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
     margin-top: 5px;
+    left: 0;
+}
+
+div.parent {
+    display: flex;
+}
+
+div.grid-container {
+    width: 100vw;
+    display: grid;
+    grid-template-areas:  
+        "big-card big-card big-card big-card";
+    grid-template-columns: repeat(5, 1fr);   
+    grid-template-rows: 250px 200px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+}
+
+div.big-card {
+    grid-column: 1 / 6;
+    border: 1px solid black;
+    line-height: 240px;
 }
 
 h2  {
@@ -35,7 +59,7 @@ button {
 }
 
 div.search-button {
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 button:hover {
