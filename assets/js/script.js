@@ -1,17 +1,20 @@
 var apiKey = 'e02041905f5a14c5c120f521c211aa9b';
-var apiURL = 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=' + apiKey;
-var inputEl = document.querySelector("#input-city");
-var searchBtn = document.querySelector(".btn-el");
-var city;
+var queryURL;
 
-searchBtn.addEventListener('click', function(event) {
-    event.preventDefault;
-    city = inputEl.value;
-    
-})
+//DOM ELEMENTS
+var inputEl = document.querySelector('#input-city');
+var searchBtn = document.querySelector('.btn-el');
 
-// fetch(apiURL);
+var getCityCoordenates = function(city) {
+    var city = inputEl.value.trim();
+    queryURL =  "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+    fetch(queryURL)
+    .then.
 
-var isTrue = false;
-fetch(isTrue ? 'endpoint' : './mock.json')
-    .then 
+}
+
+var getCityData = function(lat, lon) {
+
+}
+
+searchBtn.addEventListener('click', getCityCoordenates);
