@@ -27,8 +27,6 @@ div.parent {
 div.grid-container {
     width: 100vw;
     display: grid;
-    grid-template-areas:  
-        "big-card big-card big-card big-card";
     grid-template-columns: repeat(5, 1fr);   
     grid-template-rows: 250px 200px;
     align-items: center;
@@ -40,9 +38,22 @@ div.big-card {
     grid-column: 1 / 6;
 }
 
-.date {
-    border: 1px solid black;
+div.big-card h1 {
+    font-size: 120%;
+    
+
 }
+
+.date{
+    border: 1px solid black;
+    font-style: italic;
+}
+
+.appendedtitle {
+    margin: 20px;
+    font-style: italic;
+}
+
 
 div.top-part h2  {
     font-size: 150%;

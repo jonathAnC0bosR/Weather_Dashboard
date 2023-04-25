@@ -8,7 +8,7 @@ var bigCardEl = document.querySelector('.big-card')
 var handleFormSubmit = function(event) {
     event.preventDefault();
     var city = inputEl.value.trim();
-
+    bigCardEl.textContent = '';
     if (city) {
          getCityCoordenates(city);
         console.log(city);
@@ -17,14 +17,14 @@ var handleFormSubmit = function(event) {
     }
 }
 
-var getCityCoordenates = function(city) {
-    var queryUrl =  'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey + '&units=imperial';
+var getCityCoordenates = function(cityParameter) {
+    var queryUrl =  'https://api.openweathermap.org/data/2.5/forecast?q=' + cityParameter + '&appid=' + apiKey + '&units=imperial';
     fetch(queryUrl)
         .then(function(response) {
             if(response.ok) {
-                response.json().then(function(data) {
-                    console.log(data);
-                    displayWeatherCards(data.list)
+                response.json()
+                .then(function(data) {
+                    displayWeatherCards(data);
                 })
             } else { 
                 alert('Error' + response.statusText);
@@ -34,25 +34,33 @@ var getCityCoordenates = function(city) {
         })
 }
 
-var displayWeatherCards = function(data) {
-    if(data === 0) {
+var displayWeatherCards = function(weather) {
+    if(weather === 0) {
         alert("There's no data for this city, sorry");
         return;
     } 
     var today = dayjs();
-    console.log();
     var dateEl = document.createElement('h2');
     var titleEl = document.createElement('h1');
     dateEl.textContent = today.format('DD-MMM-YY');
-    dateEl.classList = 'date';
+    titleEl.classList = 'date';
+    dateEl.classList = 'appendedtitle';
     titleEl.textContent = inputEl.value;
+    titleEl.appendChild(dateEl);
     bigCardEl.appendChild(titleEl);
-    bigCardEl.appendChild(dateEl);
+    var todayTemp = weather.list[0].main.temp;
+    console.log(todayTemp);
+    var todayWind = weather.list[0].wind.speed;
+    var todayTempEl = document.createElement('p');
+    todayTempEl.textContent = 'Todays temp: ' + todayTemp + ' °F';
+    titleEl.append(todayTempEl);
+    
+    
     
 
     
-    console.log(data[0]);
-    for(var i = 0; i < data.length; i+=8) {
+    console.log(weather.list[0]);
+    for(var i = 0; i < weather.length; i+=8) {
         console.log(data[i]);
         
     }
