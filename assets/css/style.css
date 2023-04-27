@@ -34,7 +34,7 @@ div.grid-container {
     margin-right: 10px;
 }
 
-div.big-card {
+div#big-card {
     grid-column: 1 / 6;
 }
 
@@ -71,8 +71,19 @@ button {
     border-radius: 5px;
 }
 
-div.search-button {
-    /* border-bottom: 1px solid black; */
+.big-card  {
+    border: 1px solid black;
+}
+
+div#big-card h1 {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+div#big-card p {
+    margin: 15px;
 }
 
 button:hover {
