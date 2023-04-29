@@ -40,8 +40,12 @@ div#big-card {
 
 div.big-card h1 {
     font-size: 120%;
-    
+}
 
+div.card-1 {
+    grid-column: 1 / 6;
+    display: flex;
+    justify-content: center;
 }
 
 .date{
@@ -96,4 +100,15 @@ li {
     line-height: 30px;
     padding: 0 10px 0 5px;
     border-radius: 5px;
+}
+
+.card-1 div {
+    margin: 15px;
+    background-color: white;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.card-1 p {
+    margin: 10px 0 0 10px;
 }
